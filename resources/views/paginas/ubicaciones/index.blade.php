@@ -32,13 +32,15 @@
                       <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                          <th>Area</th>
-                          <th>Puesto</th>
-                          <th>Usuario</th>
-                          <th>Nombre de Red</th>
-                          <th>Grupo de Red</th>
-                          <th>Ip</th>
-                          <th>Piso</th>
+                        <!-- <th>ID</th> -->
+                        <th>Area</th> 
+                        <th>Puesto</th>
+                        <th>Usuario</th>
+                        <th>Nombre Red</th>
+                        <th>Grupo Red</th>
+                        <th>IP</th>
+                        <th>Piso</th>
+                        
                           
                           <th>Acciones</th>
                         </tr>
@@ -49,13 +51,15 @@
                           
                           <tr>
 
-                            <td>{{$ubicacion->areas->nombre}}</td>
-                            <td>{{$ubicacion->puesto}}</td>
-                            <td>{{$ubicacion->usuarios->name}}</td>
-                            <td>{{$ubicacion->nombreRed}}</td>
-                            <td>{{$ubicacion->grupoRed}}</td>
-                            <td>{{$ubicacion->ip}}</td>
-                            <td>{{$ubicacion->piso}}</td>
+                          <!-- <td>{{ $ubicacion->idPosicion }}</td> -->
+                          <td>{{ $ubicacion->area ? $ubicacion->area->area : 'N/A' }}</td>
+                          <td>{{ $ubicacion->puesto }}</td>
+                          <td>{{ $ubicacion->usuario }}</td>
+                          <td>{{ $ubicacion->nombreRed }}</td>
+                          <td>{{ $ubicacion->grupoRed }}</td>
+                          <td>{{ $ubicacion->ip }}</td>
+                          <td>{{ $ubicacion->piso }}</td>
+                          
                             
                             <td>
                               <a href="">

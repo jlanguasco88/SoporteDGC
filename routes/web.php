@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AreaController;
-
+use App\Http\Controllers\UbicacionController;
 
 // Route::get('/login', function () {
 //     return view('index');
@@ -20,4 +20,8 @@ Route::get('areas', [AreaController::class, 'index'])->name('areas.index');
 Route::post('areas', [AreaController::class, 'store'])->name('areas.store');
 Route::get('areas/{idarea}/edit', [AreaController::class, 'edit'])->name('areas.edit');
 Route::put('areas/{idarea}', [AreaController::class, 'update'])->name('areas.update');
-Route::get('/areas/{idarea}', [AreaController::class, 'destroy'])->name('areas.destroy');
+Route::get('areas/{idarea}', [AreaController::class, 'destroy'])->name('areas.destroy');
+
+// Ruta para listar las posiciones
+Route::get('ubicaciones', [UbicacionController::class, 'index'])->name('ubicaciones.index');
+Route::get('ubicaciones/create', [UbicacionController::class, 'create'])->name('ubicaciones.create');

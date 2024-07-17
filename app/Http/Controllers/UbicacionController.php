@@ -16,10 +16,8 @@ class UbicacionController extends Controller
      */
     public function index()
     {
-        $areas = Area::all();
-        $usuarios = User::all();
-        $ubicaciones = Ubicacion::all();
-        return view('paginas.ubicaciones.index',compact('areas','usuarios'))->with('ubicaciones', $ubicaciones);
+        $ubicaciones = Ubicacion::with('area')->get();
+        return view('paginas.ubicaciones.index', compact('ubicaciones'));
     }
 
     /**

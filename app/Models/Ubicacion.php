@@ -7,30 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ubicacion extends Model
 {
-    use HasFactory;
-    protected $table = "ubicaciones";
-    //relacion uno a muchos inversa
-    protected $fillable = [ 
-       'puesto',
-       'usuario_id',
-       'nombreRed',
-       'grupoRed',
-       'ip',
-       
-       'area_id',
-       'piso'
-    ];
+  use HasFactory;
+
+  protected $table = 'posicion';
+
+  protected $primaryKey = 'idPosicion';
+
+  protected $fillable = [
+      'puesto',
+      'usuario',
+      'nombreRed',
+      'grupoRed',
+      'ip',
+      'piso',
+      'area_idarea'
+  ];
 
     public $timestamps = false;
 
-    public function usuarios(){
-
-        return $this->belongsTo(User::class, 'usuario_id');
-      }
-  
-      public function areas(){
-  
-        return $this->belongsTo(Area::class, 'area_id');
-      }
+    public function area()
+    {
+        return $this->belongsTo(Area::class, 'area_idarea', 'idarea');
+    }
   
 }
