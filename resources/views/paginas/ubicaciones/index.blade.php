@@ -9,7 +9,7 @@
             <div class="box-body">
                 
                 <div>
-                  <a href="{{route('ubicaciones.create')}}" type="button" class="btn btn-success"><i class="fa-sharp fa-solid fa-sitemap"></i>  Agregar Ubicación</a>
+                  <a href="{{route('ubicaciones.create')}}" type="button" class="btn btn-success btn-lg"><i class="fa-sharp fa-solid fa-sitemap"></i>  Agregar Ubicación</a>
                 </div>
                 <br>
                 <div>

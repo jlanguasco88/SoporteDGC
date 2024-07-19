@@ -11,17 +11,17 @@ use App\Http\Controllers\UbicacionController;
 //Route::post('/', [UserController::class, 'login'])->name('user.login');
 Route::post('/logout', [UserController::class, 'logout'])->name('user.logout');
 
-Route::get('/inicio', function () {
+Route::get('soporteDGC/inicio', function () {
     return view('bienvenido');
 });
 
-Route::get('areas/create', [AreaController::class, 'create'])->name('areas.create');
-Route::get('areas', [AreaController::class, 'index'])->name('areas.index');
-Route::post('areas', [AreaController::class, 'store'])->name('areas.store');
-Route::get('areas/{idarea}/edit', [AreaController::class, 'edit'])->name('areas.edit');
-Route::put('areas/{idarea}', [AreaController::class, 'update'])->name('areas.update');
-Route::get('areas/{idarea}', [AreaController::class, 'destroy'])->name('areas.destroy');
+Route::get('soporteDGC/areas/create', [AreaController::class, 'create'])->name('areas.create');
+Route::get('soporteDGC/areas', [AreaController::class, 'index'])->name('areas.index');
+Route::post('soporteDGC/areas', [AreaController::class, 'store'])->name('areas.store');
+Route::get('soporteDGC/areas/{idarea}/edit', [AreaController::class, 'edit'])->name('areas.edit');
+Route::put('soporteDGC/areas/{idarea}', [AreaController::class, 'update'])->name('areas.update');
+Route::get('soporteDGC/areas/{idarea}', [AreaController::class, 'destroy'])->name('areas.destroy');
 
 // Ruta para listar las posiciones
-Route::get('ubicaciones', [UbicacionController::class, 'index'])->name('ubicaciones.index');
-Route::get('ubicaciones/create', [UbicacionController::class, 'create'])->name('ubicaciones.create');
+Route::get('soporteDGC/ubicaciones', [UbicacionController::class, 'index'])->name('ubicaciones.index');
+Route::get('soporteDGC/ubicaciones/create', [UbicacionController::class, 'create'])->name('ubicaciones.create');
