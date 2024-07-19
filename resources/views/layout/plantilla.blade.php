@@ -57,27 +57,31 @@
 
 <script>
   $(function () {
+    var idioma = {
+      "url": "//cdn.datatables.net/plug-ins/2.1.0/i18n/es-MX.json"
+    };
+
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true, 
+      "lengthChange": true, 
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-      "language": {
-               "url": "//cdn.datatables.net/plug-ins/1.10.22/i18n/Spanish.json"
-      }
-       
+      "language": idioma,
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
+      "lengthChange": true,
       "searching": false,
       "ordering": true,
       "info": true,
       "autoWidth": false,
       "responsive": true,
-      "language": idioma
+      "language": idioma,
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]]
     });
   });
-
- 
 </script>
 @if(session('AreaCreada') == 'OK')
     <script type="text/javascript">
