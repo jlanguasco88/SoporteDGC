@@ -88,7 +88,7 @@
         
       Swal.fire(
 
-          'El Area ha Sido Creada con Éxito',
+          'Los datos han sido agregados con éxito',
           '',
           'success'
         )
@@ -121,7 +121,7 @@
     
   Swal.fire(
 
-      'El Area ha Sido Actualizada con Éxito',
+      'Los datos han sido actualizados con éxito',
       '',
       'success'
     )

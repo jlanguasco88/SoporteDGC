@@ -20,21 +20,16 @@
               
 
               <div class="card-body">
-                <div class="form-group">
-                  <label>Usuario:</label>
-                  <select class="form-control input-lg" name="usuario_id" required="">
-                    <option value="">Seleccionar Usuario</option>
-                    @foreach($usuarios as $usuario)
-                      <option value="{{$usuario->id}}">{{$usuario->name}}</option>
-                    @endforeach
-                  </select>
+                  <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" class="form-control input-lg" name="usuario" required="" value="{{old('usuario')}}">
                   </div>  
                   <div class="form-group">
                   <label>Area:</label>
-                  <select class="form-control input-lg" name="area_id" required="">
+                  <select class="form-control input-lg" name="area_idarea" required="">
                     <option value="">Seleccionar Area</option>
                     @foreach($areas as $area)
-                      <option value="{{$area->id}}">{{$area->nombre}}</option>
+                      <option value="{{$area->idarea}}">{{$area->area}}</option>
                     @endforeach
                   </select>
                   </div>  
@@ -63,25 +58,11 @@
                   <div class="form-group">
                     <label>Grupo de Red</label>
                     <select class="form-control input-lg" name="grupoRed" required="">
-                    <option value="">Seleccionar grupo de trabajo</option>
-                    <option value="ADMINISTRACION">ADMINISTRACION</option>
-                    <option value="AGRIMENSURA">AGRIMENSURA</option>
-                    <option value="ASESORIA">ASESORIA</option>
-                    <option value="CARTOGRAFIA">CARTOGRAFIA</option>
-                    <option value="DEPOSITO">DEPOSITO</option>
-                    <option value="DIRECCION">DIRECCION</option>
-                    <option value="ENTRADA">ENTRADA</option>
-                    <option value="INMFISCALES">INMFISCALES</option>
-                    <option value="MENTRADA">MENTRADA</option>
-                    <option value="MUNICIPIOS">MUNICIPIOS</option>
-                    <option value="PERSONAL">PERSONAL</option>
-                    <option value="REGIMEN">REGIMEN</option>
-                    <option value="SECRETARIA">SECRETARIA</option>
-                    <option value="SISTEMAS">SISTEMAS</option>
-                    <option value="SUMARIOS">SUMARIOS</option>
-                    <option value="VALUACION">VALUACION</option>
-                  </select>
-                  </div>
+                      <option value="">Seleccionar Grupo de Red</option>
+                      @foreach($gruposRed as $grupoRed)
+                        <option value="{{$grupoRed}}">{{$grupoRed}}</option>
+                      @endforeach
+                    </select>
                   <div class="form-group">
                     <label>Observaciones:</label>
                     <input type="text" class="form-control input-lg" name="observaciones"  value="{{old('observaciones')}}">

@@ -27,9 +27,10 @@ class UbicacionController extends Controller
      */
     public function create()
     {   
-        $usuarios = User::all();
         $areas = Area::all();
-        return view('paginas.ubicaciones.create',compact('usuarios','areas'));
+        $gruposRed = Ubicacion::select('grupoRed')->distinct()->pluck('grupoRed');
+
+        return view('paginas.ubicaciones.create',compact('gruposRed','areas'));
         //el formulario donde agregamos los datos
         
     }
@@ -43,24 +44,24 @@ class UbicacionController extends Controller
     public function store(Request $request)
     {
         $datos = request()->validate([
-            'puesto'=>['required','string'],
-            'usuario_id'=>['required'],
+            'puesto'=>['required'],
+            'usuario'=>['required','string'],
             'nombreRed'=>['required','string'],
             'grupoRed'=>['required','string'],
             'ip'=>['required','string'],
             'observaciones'=>[''],
-            'area_id'=>['required'],
+            'area_idarea'=>['required'],
             'piso'=>['required']
         ]);
 
         Ubicacion::create([
            'puesto'=>$datos["puesto"],
-           'usuario_id'=>$datos["usuario_id"],
+           'usuario'=>$datos["usuario"],
            'nombreRed'=>$datos["nombreRed"],
            'grupoRed'=>$datos["grupoRed"],
            'ip'=>$datos["ip"],
            'observaciones'=>$datos["observaciones"],
-           'area_id'=>$datos["area_id"],
+           'area_idarea'=>$datos["area_idarea"],
            'piso'=>$datos["piso"]
         ]);
 

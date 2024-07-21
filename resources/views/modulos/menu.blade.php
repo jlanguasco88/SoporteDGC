@@ -68,7 +68,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('ubicaciones.create')}}" class="nav-link">
                   <i class="far fa-plus nav-icon" style="color: lime"></i>
                   <p>Nueva Ubicación</p>
                 </a>

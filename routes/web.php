@@ -22,6 +22,7 @@ Route::get('soporteDGC/areas/{idarea}/edit', [AreaController::class, 'edit'])->n
 Route::put('soporteDGC/areas/{idarea}', [AreaController::class, 'update'])->name('areas.update');
 Route::get('soporteDGC/areas/{idarea}', [AreaController::class, 'destroy'])->name('areas.destroy');
 
-// Ruta para listar las posiciones
+// Ruta para listar las ubicaciones
 Route::get('soporteDGC/ubicaciones', [UbicacionController::class, 'index'])->name('ubicaciones.index');
 Route::get('soporteDGC/ubicaciones/create', [UbicacionController::class, 'create'])->name('ubicaciones.create');
+Route::post('soporteDGC/ubicaciones', [UbicacionController::class, 'store'])->name('ubicaciones.store');

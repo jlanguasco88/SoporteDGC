@@ -20,7 +20,7 @@ class AreaController extends Controller
     public function create()
     {
         //el formulario donde agregamos los datos
-        return view('pareas.create');
+        return view('paginas.areas.create');
     }
 
     
