@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Area;
+use DB;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -47,4 +49,39 @@ class UserController extends Controller
         return redirect('/login');
         
     }
+
+    public function index()
+    {
+        
+        $usuarios = User::all();
+        
+        return view('paginas.usuarios.index', compact('usuarios'));
+    }
+
+    public function create()
+    {   
+        $areas = Area::all();
+        // Obtener los valores únicos del campo 'rol'
+        $roles = $this->getEnumValues('usuarios', 'rol');
+
+        return view('paginas.usuarios.create',compact('roles','areas'));
+        //el formulario donde agregamos los datos
+        
+    }
+
+    private function getEnumValues($table, $column)
+    {
+        $type = DB::select(DB::raw("SHOW COLUMNS FROM {$table} WHERE Field = '{$column}'"))[0]->Type;
+
+        preg_match('/^enum\((.*)\)$/', $type, $matches);
+        $enum = [];
+        foreach(explode(',', $matches[1]) as $value)
+        {
+            $enum[] = trim($value, "'");
+        }
+
+        return $enum;
+    }
+
+
 }

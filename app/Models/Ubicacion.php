@@ -9,7 +9,7 @@ class Ubicacion extends Model
 {
   use HasFactory;
 
-  protected $table = 'posicion';
+  protected $table = 'posiciones';
 
   protected $primaryKey = 'idPosicion';
 

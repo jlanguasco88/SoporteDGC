@@ -12,16 +12,16 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    protected $table = 'usuarios';
+    protected $primaryKey = 'idusuario';
+
     protected $fillable = [
         'name',
         'username',
-        'email',
         'password',
+        'rol',
+        'estado',
+        'area_id'
     ];
 
     /**
@@ -45,5 +45,9 @@ class User extends Authenticatable
 
     public function ubicaciones(){
         return $this->hasMany('App\Models\Ubicacion');
+    }
+    public function area()
+    {
+        return $this->belongsTo(Area::class, 'area_id', 'idarea');
     }
 }

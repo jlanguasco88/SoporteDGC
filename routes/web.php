@@ -26,3 +26,7 @@ Route::get('soporteDGC/areas/{idarea}', [AreaController::class, 'destroy'])->nam
 Route::get('soporteDGC/ubicaciones', [UbicacionController::class, 'index'])->name('ubicaciones.index');
 Route::get('soporteDGC/ubicaciones/create', [UbicacionController::class, 'create'])->name('ubicaciones.create');
 Route::post('soporteDGC/ubicaciones', [UbicacionController::class, 'store'])->name('ubicaciones.store');
+
+// Ruta para listar las usuarios
+Route::get('soporteDGC/usuarios', [UserController::class, 'index'])->name('usuarios.index');
+Route::get('soporteDGC/usuarios/create', [UserController::class, 'create'])->name('usuarios.create');

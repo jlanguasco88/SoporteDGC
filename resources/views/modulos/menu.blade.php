@@ -76,31 +76,7 @@
               
             </ul>
           </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-box"  style="color: yellow"></i>
-              <p  style="color: white">
-                Insumos
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-eye nav-icon" style="color: red;"></i>
-                  <p>Ver Insumos</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-plus nav-icon" style="color: lime"></i>
-                  <p>Nuevo Insumo</p>
-                </a>
-              </li>
-            
-            </ul>
-          </li>
+          <!-- PANEL DE IMPRESORA-->
           <li class="nav-header">PANEL IMPRESORA</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -149,7 +125,33 @@
               </li>
             
             </ul>
-          </li>      
+          </li>  
+          <!-- PANEL DE ADMIN-->    
+          <li class="nav-header">PANEL ADMIN</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user"  style="color:rgb(152, 172, 199)"></i>
+              <p  style="color: white">
+                Usuarios
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('usuarios.index') }}" class="nav-link">
+                  <i class="far fa-eye nav-icon" style="color: red;"></i>
+                  <p>Ver Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="far fa-plus nav-icon" style="color: lime"></i>
+                  <p>Nuevo Usuario</p>
+                </a>
+              </li>
+            </ul>
+          </li> 
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

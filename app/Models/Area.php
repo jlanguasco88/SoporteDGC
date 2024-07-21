@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
-    protected $table = 'area'; // Nombre de la tabla
+    protected $table = 'areas'; // Nombre de la tabla
 
     protected $primaryKey = 'idarea'; // Clave primaria
 
